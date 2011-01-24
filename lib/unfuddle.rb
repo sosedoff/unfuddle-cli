@@ -1,0 +1,12 @@
+require 'rest-client'
+require 'active_resource'
+require 'yaml'
+
+require 'unfuddle/unfuddle'
+require 'unfuddle/helpers'
+require 'unfuddle/errors'
+require 'unfuddle/terminal'
+require 'unfuddle/session'
+require 'unfuddle/account'
+require 'unfuddle/resources'
+require 'unfuddle/command'
