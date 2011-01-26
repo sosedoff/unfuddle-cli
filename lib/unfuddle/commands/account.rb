@@ -3,6 +3,7 @@ class Unfuddle::Command::AccountCommand < Unfuddle::Command
     if File.exists?(Unfuddle.credentials_file)
       acc = Unfuddle::Account.load(Unfuddle.credentials_file)
       if acc.valid?
+        Unfuddle.account = acc
         Unfuddle::Resources::Base.set_account(acc)
         return true
       end

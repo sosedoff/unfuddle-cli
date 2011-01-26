@@ -35,6 +35,11 @@ module Unfuddle
       "#{@ssl ? 'https' : 'http'}://#{@subdomain}.unfuddle.com"
     end
     
+    # Get git url for repository
+    def git_url(repo)
+      "git@#{@subdomain}.unfuddle.com:#{@subdomain}/#{repo}.git"
+    end
+    
     # Export to YAML
     def to_yaml
       {

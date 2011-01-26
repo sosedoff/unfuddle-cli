@@ -27,11 +27,12 @@ class Unfuddle::Command::RepositoryCommand < Unfuddle::Command
   
   # Checkout (clone) repository into directory
   def checkout
-    repo = @args.empty? ? ask('Repository') : @args.first
-    repo = Unfuddle::Resources::Repository.find_by_abbr(abbr)
+    name = @args.empty? ? ask('Repository') : @args.first
+    repo = Unfuddle::Resources::Repository.find_by_abbr(name)
     unless repo.nil?
       path = ask('Path to checkout', :default => Dir.pwd)
-      shell("git clone git@doejo.unfuddle.com:doejo/bodyshopbids.git")
+      git_url = Unfuddle.account.git_url(name)
+      shell("git clone #{git_url} #{path}")
     else
       error 'Repository was not found'
     end
