@@ -33,5 +33,11 @@ module Unfuddle
         find(:one, :from => '/account')
       end
     end
+    
+    class Person < Base
+      def name
+        "#{self.first_name} #{self.last_name}".strip
+      end
+    end
   end
 end

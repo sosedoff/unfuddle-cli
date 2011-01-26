@@ -11,6 +11,7 @@ module Unfuddle
     'log'         => 'repository:log',
     'projects'    => 'project:index',
     'help'        => 'help:index',
+    'people'      => 'people:index'
   }
 
   class Command

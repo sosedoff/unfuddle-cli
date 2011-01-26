@@ -15,7 +15,7 @@ module Unfuddle
       end
     end
     
-    # Validate 
+    # Validate
     def valid?
       res = RestClient::Resource.new(
         "#{@ssl ? 'https' : 'http'}://#{@subdomain}.unfuddle.com/api/v1/account",
